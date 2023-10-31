@@ -22,6 +22,6 @@ end
 
 -- Check dungeon status every 1 second
 while true do
-    wait(1) -- Wait for 1 second
+    wait(0.1) -- Wait for 1 second
     checkDungeon() -- Check the dungeon status
 end
