@@ -1,0 +1,15 @@
+local currencies = {"Gems", "Screws", "Copper", "Bolts"}
+local currentIndex = 1
+
+while true do
+    for i = 1, #currencies do
+        local targetcollect = currencies[currentIndex]
+        game:GetService("ReplicatedStorage").CollectedCurrency:FireServer(targetcollect, 1)
+        currentIndex = currentIndex % #currencies + 1
+        wait() 
+    end
+
+    game:GetService("ReplicatedStorage").Events.TeleportEvent:InvokeServer("Teleport", 1)
+
+    wait(30)
+end
