@@ -71,4 +71,5 @@ while true do
     wait(20)
     startDungeonIfAuthorized(playerNames)
     waitForCaveDweller(450) 
+    wait(10)
 end
