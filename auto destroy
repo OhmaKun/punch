@@ -4,7 +4,7 @@ while true do
     for _, child in pairs(dungeon:GetChildren()) do
         if not child:IsA("Humanoid") and not child:IsAnchored() then
             wait(0.1)
-            child.Parent:Destroy() -- Destroy the entire model if it's unanchored and not a Humanoid
+            child.Parent:Destroy() 
         end
     end
     wait(1) -- Add a delay to prevent the loop from running too frequently
