@@ -50,7 +50,7 @@ local function waitForCaveDweller(maxTimer)
         print("CaveDweller found! Waiting for it to despawn...")
         repeat
             wait(1)
-        until not dungeon:FindFirstChild("MushroomWizard")
+        until not dungeon:FindFirstChild("AngelNoob")
         
         print("MushroomWizard despawned! Continuing with the next steps...")
         game:GetService("ReplicatedStorage").Events.DungeonEvent:FireServer("Exit")
