@@ -1,11 +1,19 @@
-local humanoid = game.Workspace.BreakableParts.Dungeon.Humanoid
+local dungeon = game.Workspace.BreakableParts.Dungeon
 
--- Function to check and handle the humanoid's health
-local function checkHealth()
-    if humanoid.Health <= 0 then
-        humanoid.Parent:Destroy() -- Destroy the humanoid's parent object
+while true do
+    local humanoidToDelete = nil
+    for _, child in pairs(dungeon:GetChildren()) do
+        local humanoid = child:FindFirstChild("Humanoid")
+        if humanoid and humanoid.Health <= 0 then
+            humanoidToDelete = humanoid
+            break -- Exit the loop after finding the first humanoid with health <= 0
+        end
     end
+    
+    if humanoidToDelete then
+        wait(0.1)
+        humanoidToDelete.Parent:Destroy() -- Destroy the parent of the found humanoid
+    end
+    
+    wait(1) -- Add a delay to prevent the loop from running too frequently
 end
-
--- Connect the function to the humanoid's health changed event
-humanoid.HealthChanged:Connect(checkHealth)
