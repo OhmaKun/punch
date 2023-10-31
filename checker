@@ -1,0 +1,27 @@
+local Workspace = game:GetService("Workspace")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local function teleportPlayer()
+    local args = {
+        [1] = "Teleport",
+        [2] = 1
+    }
+    ReplicatedStorage.Events.TeleportEvent:InvokeServer(unpack(args))
+end
+
+local function checkDungeon()
+    local breakablePartsFolder = Workspace.BreakableParts
+    local dungeonFolder = breakablePartsFolder.Dungeon
+    
+    -- Check if Dungeon folder exists and has no children
+    if dungeonFolder and #dungeonFolder:GetChildren() == 0 then
+        -- Execute teleportation
+        teleportPlayer()
+    end
+end
+
+-- Check dungeon status every 1 second
+while true do
+    wait(1) -- Wait for 1 second
+    checkDungeon() -- Check the dungeon status
+end
