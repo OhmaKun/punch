@@ -36,12 +36,15 @@ local function waitForCaveDweller(maxTimer)
 
     while not caveDwellerFound and timer <= maxTimer do
         local dungeon = game.Workspace.BreakableParts.Dungeon
-        for _, v in pairs(dungeon:GetChildren()) do
-            if v.Name == "AngelNoob" then
-                caveDwellerFound = true
-                break
+        if dungeon then
+            for _, v in pairs(dungeon:GetChildren()) do
+                if v.Name == "AngelNoob" and v:IsA("Model") then
+                    caveDwellerFound = true
+                    break
+                end
             end
         end
+
         wait(1) -- Wait for 1 second before checking again 
         timer = timer + 1
     end
@@ -50,15 +53,16 @@ local function waitForCaveDweller(maxTimer)
         print("CaveDweller found! Waiting for it to despawn...")
         repeat
             wait(1)
-        until not dungeon:FindFirstChild("AngelNoob")
+        until not (dungeon and dungeon:FindFirstChild("AngelNoob"))
         
-        print("MushroomWizard despawned! Continuing with the next steps...")
+        print("AngelNoob despawned! Continuing with the next steps...")
         game:GetService("ReplicatedStorage").Events.DungeonEvent:FireServer("Exit")
     else
         print("CaveDweller not found within the time limit. Exiting dungeon.")
         game:GetService("ReplicatedStorage").Events.DungeonEvent:FireServer("Exit")
     end
 end
+
 
 -- Example usage
 while true do
