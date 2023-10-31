@@ -1,0 +1,9 @@
+local dungeon = game.Workspace.BreakableParts.Dungeon
+
+for _, child in pairs(dungeon:GetChildren()) do
+    local humanoid = child:FindFirstChild("Humanoid")
+    if humanoid and humanoid.Health == 0 then
+        wait(0.1)
+        dungeon:Destroy()
+    end
+end
