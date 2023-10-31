@@ -37,7 +37,7 @@ local function waitForCaveDweller(maxTimer)
     while not caveDwellerFound and timer <= maxTimer do
         local dungeon = game.Workspace.BreakableParts.Dungeon
         for _, v in pairs(dungeon:GetChildren()) do
-            if v.Name == "MushroomWizard" then
+            if v.Name == "AngelNoob" then
                 caveDwellerFound = true
                 break
             end
