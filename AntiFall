@@ -1,0 +1,16 @@
+local player = game.Players.LocalPlayer -- Get the local player
+local character = player.Character -- Get the player's character
+
+-- Check if the character exists
+if character then
+    local humanoid = character:FindFirstChild("Humanoid") -- Find the Humanoid object
+
+    -- Check if the Humanoid object exists
+    if humanoid then
+        humanoid.PlatformStand = true -- Prevent the humanoid from falling due to gravity
+    else
+        print("Humanoid not found!")
+    end
+else
+    print("Character not found!")
+end
