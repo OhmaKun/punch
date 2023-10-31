@@ -1,0 +1,4 @@
+while true do
+    game:GetService("ReplicatedStorage").Events.WishingWell:FireServer("Mega")
+    wait(3 * 60 * 60) -- Wait for 3 hours (3 * 60 * 60 seconds) before executing the code again
+end
