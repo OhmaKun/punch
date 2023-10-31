@@ -2,10 +2,9 @@ local dungeon = game.Workspace.BreakableParts.Dungeon
 
 while true do
     for _, child in pairs(dungeon:GetChildren()) do
-        local humanoid = child:FindFirstChild("Humanoid")
-        if humanoid and humanoid.Health <= 0 and not child:IsAnchored() then
+        if not child:IsA("Humanoid") and not child:IsAnchored() then
             wait(0.1)
-            child:Destroy() -- Destroy the part if it's unanchored and humanoid health is <= 0
+            child.Parent:Destroy() -- Destroy the entire model if it's unanchored and not a Humanoid
         end
     end
     wait(1) -- Add a delay to prevent the loop from running too frequently
