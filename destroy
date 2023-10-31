@@ -1,9 +1,13 @@
-local dungeon = game.Workspace.BreakableParts.Dungeon
+local humanoid = game.Workspace.BreakableParts.Dungeon.Humanoid
 
-for _, child in pairs(dungeon:GetChildren()) do
-    local humanoid = child:FindFirstChild("Humanoid")
-    if humanoid and humanoid.Health == 0 then
-        wait(0.1)
-        dungeon:Destroy()
+local function checkHealth()
+    if humanoid.Health <= 0 then
+        local parentObject = humanoid.Parent
+        if parentObject then
+            parentObject:Destroy() -- Destroy the humanoid's parent object
+        end
     end
 end
+
+-- Connect the function to the humanoid's health changed event
+humanoid.HealthChanged:Connect(checkHealth)
