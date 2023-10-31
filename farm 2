@@ -25,7 +25,7 @@ local function startDungeonIfAuthorized(playerNames)
     if localPlayer.Name == "OhmaKun" then
         local dungeonEvent = game:GetService("ReplicatedStorage").Events.DungeonEvent
         dungeonEvent:FireServer("StartDungeon")
-    else
+    else 
         warn("You are not authorized to start the dungeon.")
     end
 end
