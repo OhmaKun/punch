@@ -17,6 +17,7 @@ local function checkDungeon()
     if dungeonFolder and #dungeonFolder:GetChildren() == 0 then
         -- Execute teleportation
         teleportPlayer()
+
     end
 end
 
