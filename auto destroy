@@ -1,0 +1,11 @@
+local humanoid = game.Workspace.BreakableParts.Dungeon.Humanoid
+
+-- Function to check and handle the humanoid's health
+local function checkHealth()
+    if humanoid.Health <= 0 then
+        humanoid.Parent:Destroy() -- Destroy the humanoid's parent object
+    end
+end
+
+-- Connect the function to the humanoid's health changed event
+humanoid.HealthChanged:Connect(checkHealth)
