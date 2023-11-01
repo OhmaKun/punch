@@ -62,7 +62,7 @@ while true do
     wait(5)
     startDungeonIfAuthorized(playerNames)
 	game:GetService("ReplicatedStorage").Events.TeleportEvent:InvokeServer("Teleport", 1)
-    waitForCaveDweller(450) 
+    waitForCaveDweller(500) 
 
     local angelNoob = game.Players:FindFirstChild("AngelNoob")
     while angelNoob do
