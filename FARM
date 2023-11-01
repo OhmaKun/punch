@@ -37,7 +37,7 @@ local function waitForCaveDweller(maxTimer)
     while not caveDwellerFound and timer <= maxTimer do
         local dungeon = game.Workspace.BreakableParts.Dungeon
         for _, v in pairs(dungeon:GetChildren()) do
-            if v.Name == "MushroomWizard" then
+            if v.Name == "AngelNoob" then
                 caveDwellerFound = true
                 break
             end
@@ -62,12 +62,12 @@ while true do
     wait(5)
     startDungeonIfAuthorized(playerNames)
 	game:GetService("ReplicatedStorage").Events.TeleportEvent:InvokeServer("Teleport", 1)
-    waitForCaveDweller(450) 
+    waitForCaveDweller(500) 
 
     local angelNoob = game.Players:FindFirstChild("AngelNoob")
     while angelNoob do
         print("Waiting for AngelNoob to leave the dungeon...")
-        wait(5) -- Check again after waiting for 5 seconds
+        wait(3) -- Check again after waiting for 5 seconds
         angelNoob = game.Players:FindFirstChild("AngelNoob")
     end
 
