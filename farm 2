@@ -63,21 +63,5 @@ while true do
     startDungeonIfAuthorized(playerNames)
     game:GetService("ReplicatedStorage").Events.TeleportEvent:InvokeServer("Teleport", 1)
     waitForCaveDweller(500) 
-
-    local dungeon = game.Workspace.BreakableParts.Dungeon
-    local numChildren = #dungeon:GetChildren()
-
-    if numChildren > 0 then
-        print("Waiting for all children to leave the dungeon...")
-        while numChildren > 0 do
-            wait(1) -- Check again after waiting for 5 seconds
-            numChildren = #dungeon:GetChildren()
-        end
-    end
-
-    -- All children have left the dungeon, continue with the next steps
-    print("All children have left the dungeon. Continuing with the next steps...")
-    -- Your additional actions here
-    
 wait(30)
 end
