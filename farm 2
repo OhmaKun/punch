@@ -59,9 +59,9 @@ end
 while true do
     local playerNames = { "GEMLordKun06", "taokoma", "GEMLordKun05", "GEMLordKun04", "GEMLordKun3", "GEMLordKun02", "GEMLordKun01", "GemLordKun11", "GemLordKun12", "GemLordKun01" }
     invitePlayers(playerNames)
-    wait(15)
+    wait(10)
     startDungeonIfAuthorized(playerNames)
     game:GetService("ReplicatedStorage").Events.TeleportEvent:InvokeServer("Teleport", 1)
     waitForCaveDweller(500) 
-wait(30)
+wait(40)
 end
