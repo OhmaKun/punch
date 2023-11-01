@@ -79,5 +79,5 @@ while true do
     print("All children have left the dungeon. Continuing with the next steps...")
     -- Your additional actions here
     
-wait(0.1)
+wait(30)
 end
