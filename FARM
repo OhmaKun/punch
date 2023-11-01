@@ -63,5 +63,5 @@ while true do
     startDungeonIfAuthorized(playerNames)
     game:GetService("ReplicatedStorage").Events.TeleportEvent:InvokeServer("Teleport", 1)
     waitForCaveDweller(500) 
-wait(40)
+wait(20)
 end
