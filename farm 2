@@ -67,7 +67,7 @@ while true do
     local angelNoob = game.Players:FindFirstChild("AngelNoob")
     while angelNoob do
         print("Waiting for AngelNoob to leave the dungeon...")
-        wait(5) -- Check again after waiting for 5 seconds
+        wait(3) -- Check again after waiting for 5 seconds
         angelNoob = game.Players:FindFirstChild("AngelNoob")
     end
 
